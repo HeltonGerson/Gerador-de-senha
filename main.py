@@ -1,3 +1,6 @@
+import os
+import pyperclip
+
 import string
 import random
 
@@ -15,8 +18,10 @@ while True:
         if user_input <= 8:
             print("A quantidade de caracteres deve ser maior do que 8!!")
             continue
-        else:
-            break
+        if user_input > 32:
+            print("A quantidade de caracteres deve ser menor do que 32!!")
+            continue
+        break
 
     except ValueError:
         print("Por favor, digite apenas números!!")
@@ -45,5 +50,11 @@ for x in range(part2):
 random.shuffle(result)
 
 
-password = "".join(result)
-print("Sua senha:", password)
+senha = "".join(result)
+print("Sua senha:", senha)
+
+input("\nPressione [ENTER] para copiar a senha para a área de transferência...")
+pyperclip.copy(senha)
+
+os.system("cls||clear")
+print("Senha copiada com sucesso!!")
