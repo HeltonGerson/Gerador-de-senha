@@ -1,6 +1,17 @@
 import os
 import string
 import random
+import pyperclip
+from datetime import datetime
+
+
+def limparTela():
+    os.system("cls||clear")
+
+
+def copiar(senha):
+    input("\nPressione [ENTER] para copiar a senha para a área de transferência...")
+    pyperclip.copy(senha)
 
 
 def receberTamanhoSenha():
@@ -12,12 +23,12 @@ def receberTamanhoSenha():
             if user_input < 8:
                 print("A quantidade de caracteres deve ser maior ou igual à 8!!")
                 input("Pressione [ENTER] para continuar!")
-                os.system("cls||clear")
+                limparTela()
                 continue
             if user_input > 32:
                 print("A quantidade de caracteres deve ser menor ou igual à 32!!")
                 input("Pressione [ENTER] para continuar!")
-                os.system("cls||clear")
+                limparTela()
                 continue
 
             return user_input
@@ -25,7 +36,7 @@ def receberTamanhoSenha():
         except ValueError:
             print("Por favor, digite apenas números!!")
             input("Pressione [ENTER] para continuar!")
-            os.system("cls||clear")
+            limparTela()
             continue
 
 
@@ -65,3 +76,16 @@ def checarRepeticao(senhaGerada):
                 random.shuffle(senhaGerada)
                 continue
         break
+
+
+def salvarSenha(senhaGerada):
+    senha = "".join(senhaGerada)
+
+    historico = {}
+
+    agora_formatado = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    historico[agora_formatado] = senha
+
+    with open("historico.txt", "a", encoding="utf-8") as arquivo:
+        arquivo.write(f"{agora_formatado} = ")
+        arquivo.write(f"{historico[agora_formatado]}\n")

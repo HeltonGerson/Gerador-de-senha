@@ -1,20 +1,18 @@
 import engine
 
-import os
-import pyperclip
-
 entrada = engine.receberTamanhoSenha()
 
 senhaGerada = engine.gerador(entrada)
 
 engine.checarRepeticao(senhaGerada)
 
+engine.salvarSenha(senhaGerada)
+
 senha = "".join(senhaGerada)
 
 print("Sua senha:", senha)
 
-input("\nPressione [ENTER] para copiar a senha para a área de transferência...")
-pyperclip.copy(senha)
+engine.copiar(senha)
 
-os.system("cls||clear")
+engine.limparTela()
 print("Senha copiada com sucesso!!")
