@@ -81,11 +81,8 @@ def checarRepeticao(senhaGerada):
 def salvarSenha(senhaGerada):
     senha = "".join(senhaGerada)
 
-    historico = {}
-
     agora_formatado = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    historico[agora_formatado] = senha
 
     with open("historico.txt", "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{agora_formatado} = ")
-        arquivo.write(f"{historico[agora_formatado]}\n")
+        arquivo.write(f"{senha}\n")
