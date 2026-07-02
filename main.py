@@ -4,6 +4,26 @@ import pyperclip
 import string
 import random
 
+
+def receberTamanhoSenha():
+    while True:
+        try:
+            user_input = int(input("Digite o tamanho da senha: "))
+
+            if user_input < 8:
+                print("A quantidade de caracteres deve ser maior ou igual à 8!!")
+                continue
+            if user_input > 32:
+                print("A quantidade de caracteres deve ser menor do que 32!!")
+                continue
+
+            return user_input
+
+        except ValueError:
+            print("Por favor, digite apenas números!!")
+            continue
+
+
 s1 = list(string.ascii_lowercase)
 s2 = list(string.ascii_uppercase)
 s3 = list(string.digits)
