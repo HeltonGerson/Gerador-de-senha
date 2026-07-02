@@ -7,12 +7,7 @@ entrada = engine.receberTamanhoSenha()
 
 senhaGerada = engine.gerador(entrada)
 
-while True:
-    for i in range(1, len(senhaGerada)):
-        if senhaGerada[i] == senhaGerada[i - 1]:
-            engine.reShuffle(senhaGerada)
-            continue
-    break
+engine.checarRepeticao(senhaGerada)
 
 senha = "".join(senhaGerada)
 

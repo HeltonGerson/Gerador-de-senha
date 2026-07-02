@@ -15,7 +15,7 @@ def receberTamanhoSenha():
                 os.system("cls||clear")
                 continue
             if user_input > 32:
-                print("A quantidade de caracteres deve ser menor do que 32!!")
+                print("A quantidade de caracteres deve ser menor ou igual à 32!!")
                 input("Pressione [ENTER] para continuar!")
                 os.system("cls||clear")
                 continue
@@ -29,10 +29,13 @@ def receberTamanhoSenha():
             continue
 
 
-def reShuffle(lista):
-    for i in range(1, len(lista)):
-        if lista[i] == lista[i - 1]:
-            random.shuffle(lista)
+def checarRepeticao(senhaGerada):
+    while True:
+        for i in range(1, len(senhaGerada)):
+            if senhaGerada[i] == senhaGerada[i - 1]:
+                random.shuffle(senhaGerada)
+                continue
+        break
 
 
 def gerador(entrada):
