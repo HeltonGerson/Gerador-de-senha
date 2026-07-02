@@ -49,6 +49,9 @@ for x in range(part2):
 
 random.shuffle(result)
 
+for i in range(1, len(result)):
+    if result[i] == result[i - 1]:
+        random.shuffle(result)
 
 senha = "".join(result)
 print("Sua senha:", senha)
