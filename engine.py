@@ -29,15 +29,6 @@ def receberTamanhoSenha():
             continue
 
 
-def checarRepeticao(senhaGerada):
-    while True:
-        for i in range(1, len(senhaGerada)):
-            if senhaGerada[i] == senhaGerada[i - 1]:
-                random.shuffle(senhaGerada)
-                continue
-        break
-
-
 def gerador(entrada):
     s1 = list(string.ascii_lowercase)
     s2 = list(string.ascii_uppercase)
@@ -65,3 +56,12 @@ def gerador(entrada):
     random.shuffle(result)
 
     return result
+
+
+def checarRepeticao(senhaGerada):
+    while True:
+        for i in range(1, len(senhaGerada)):
+            if senhaGerada[i] == senhaGerada[i - 1]:
+                random.shuffle(senhaGerada)
+                continue
+        break
