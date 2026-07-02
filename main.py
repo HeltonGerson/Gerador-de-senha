@@ -44,9 +44,6 @@ random.shuffle(s3)
 random.shuffle(s4)
 
 
-part1 = round(user_input * (30 / 100))
-part2 = round(user_input * (20 / 100))
-
 result = []
 
 for x in range(part1):
