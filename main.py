@@ -43,6 +43,8 @@ random.shuffle(s2)
 random.shuffle(s3)
 random.shuffle(s4)
 
+part1 = round(entrada * (30 / 100))
+part2 = round(entrada * (20 / 100))
 
 result = []
 
