@@ -37,22 +37,6 @@ s4 = list(string.punctuation)
 
 print("Valor máximo 32 caracteres!")
 
-while True:
-    try:
-        user_input = int(input("Digite o tamanho da senha: "))
-
-        if user_input <= 8:
-            print("A quantidade de caracteres deve ser maior do que 8!!")
-            continue
-        if user_input > 32:
-            print("A quantidade de caracteres deve ser menor do que 32!!")
-            continue
-        break
-
-    except ValueError:
-        print("Por favor, digite apenas números!!")
-        continue
-
 random.shuffle(s1)
 random.shuffle(s2)
 random.shuffle(s3)
@@ -78,6 +62,13 @@ random.shuffle(result)
 for i in range(1, len(result)):
     if result[i] == result[i - 1]:
         random.shuffle(result)
+while True:
+    for i in range(1, len(result)):
+        if result[i] == result[i - 1]:
+            reShuffle(result)
+            continue
+    break
+
 
 senha = "".join(result)
 print("Sua senha:", senha)
