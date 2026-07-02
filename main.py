@@ -24,6 +24,12 @@ def receberTamanhoSenha():
             continue
 
 
+def reShuffle(lista):
+    for i in range(1, len(lista)):
+        if result[i] == result[i - 1]:
+            random.shuffle(lista)
+
+
 s1 = list(string.ascii_lowercase)
 s2 = list(string.ascii_uppercase)
 s3 = list(string.digits)
