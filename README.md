@@ -24,7 +24,6 @@ O objetivo principal do projeto é permitir que o usuário insira um valor natur
 
 ### ⏳ Próximas Implementações (Backlog)
 
-* [ ] **Customização:** Possibilidade de escolher quais tipos de caracteres serão utilizados na senha.
 * [x] **Validação Sequencial:** Impedir estritamente a repetição de caracteres de forma sequencial (ex: `aa`, `11`).
 * [ ] **Histórico Local:** Armazenamento de um histórico de senhas geradas com retenção de até 1 semana.
 
