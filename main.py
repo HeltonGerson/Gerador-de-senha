@@ -35,7 +35,7 @@ s2 = list(string.ascii_uppercase)
 s3 = list(string.digits)
 s4 = list(string.punctuation)
 
-print("Valor máximo 32 caracteres!")
+print("Valor máximo: 32 caracteres!\nValor mínimo: 8 caracteres!\n")
 entrada = receberTamanhoSenha()
 
 random.shuffle(s1)
